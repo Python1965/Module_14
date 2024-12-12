@@ -51,10 +51,10 @@ def get_all_products():
     cursor = connection.cursor()
 
     cursor.execute('SELECT * FROM Products WHERE id > ?', (0,))
-    return cursor.fetchall()
-
+    data_ = cursor.fetchall()
     connection.commit()
-    connection.close()
+
+    return data_
 
 
 if __name__ == '__main__':
